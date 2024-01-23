@@ -55,7 +55,7 @@ func demo1(w http.ResponseWriter, r *http.Request) {
 func handelGetRequest(cmd string) Demo1Page {
 	data := Demo1Page{Request: cmd, Response: ""}
 
-	exec := exec.Command("/bin/sh", "-c", "curl "+cmd)
+	exec := exec.Command("/bin/sh", "-c", "curl", cmd)
 
 	var out bytes.Buffer
 	exec.Stdout = &out
